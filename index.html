@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swagata Sur | Data Scientist Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    });
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white fixed w-full z-50 top-0 shadow-md dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <h1 class="text-lg font-semibold">Swagata Sur</h1>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#experience" class="hover:text-blue-400">Experience</a>
+        <a href="#skills" class="hover:text-blue-400">Skills</a>
+        <a href="#projects" class="hover:text-blue-400">Projects</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+      </div>
+      <button onclick="toggleTheme()" class="ml-4 px-3 py-1 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Toggle</button>
+    </div>
+  </nav>
+
+  <!-- Hero / Header Section -->
+  <header id="about" class="pt-28 pb-10 text-center">
+    <h2 class="text-4xl font-bold mb-2">Swagata Sur</h2>
+    <p class="text-lg mb-4">Associate Data Scientist | Machine Learning | Generative AI | Compliance Analytics</p>
+    <div class="space-x-4">
+      <a href="https://github.com/swagatasur" class="text-blue-500 hover:underline">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" class="text-blue-500 hover:underline">LinkedIn</a>
+      <a href="mailto:your.email@gmail.com" class="text-blue-500 hover:underline">Email</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="py-12 px-6 text-center bg-gray-50 dark:bg-gray-900">
+    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+    <p class="max-w-3xl mx-auto text-lg text-gray-700 dark:text-gray-300">I'm an Associate Data Scientist with over 2 years of experience in AML model calibration, sanctions monitoring, and Generative AI automation. I build scalable ML systems and intelligent pipelines that enhance efficiency and compliance accuracy. Passionate about applying data science in risk and regulatory domains.</p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="bg-white dark:bg-gray-800 py-12 px-6">
+    <h2 class="text-2xl font-semibold text-center mb-10">Experience</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div>
+        <h3 class="text-xl font-bold">Associate Data Scientist – [Your Company Name]</h3>
+        <p class="text-gray-600 italic mb-2 dark:text-gray-400">Jan 2023 – Present</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>Calibrated AML detection thresholds across multiple entities to improve detection accuracy and reduce false positives.</li>
+          <li>Developed automated anomaly classification systems using embeddings and LLMs for compliance data.</li>
+          <li>Built and deployed monitoring pipelines for sanction and embargo alert systems using Kedro, Oozie, and Kibana.</li>
+          <li>Collaborated with business and risk teams to deliver data-driven solutions aligned with compliance regulations.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-12 px-6 bg-gray-50 dark:bg-gray-900">
+    <h2 class="text-2xl font-semibold text-center mb-10">Skills & Certifications</h2>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Technical Skills</h3>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>Programming: Python, SQL, SAS</li>
+          <li>Libraries: Pandas, NumPy, Scikit-learn, LangChain, Matplotlib, SHAP</li>
+          <li>Machine Learning: Supervised/Unsupervised Learning, Feature Engineering, Model Evaluation</li>
+          <li>Generative AI: LLM Prompting, Embedding Models, Text Clustering</li>
+          <li>Tools: Kedro, Oozie, Kibana, Git, CI/CD, Jupyter</li>
+          <li>Data Visualization: Power BI, Kibana Dashboards</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Certifications</h3>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>Google Professional Data Engineer (in progress)</li>
+          <li>Microsoft Certified: Azure Data Scientist Associate</li>
+          <li>Coursera – Generative AI with Large Language Models</li>
+          <li>Coursera – Applied Machine Learning in Python</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-white dark:bg-gray-800 py-12 px-6">
+    <h2 class="text-2xl font-semibold text-center mb-10">Featured Projects</h2>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+
+      <div class="p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/600x300?text=GenAI+PoC" alt="GenAI Project" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold mb-2">🧩 GenAI PoC – Automated Anomaly Classification</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">Developed a Generative AI-driven rule-based classification system to automate mapping of anomalies to risk domains. Leveraged embeddings, clustering, and LLM prompting to synthesize insights across business units, reducing manual effort by 2–3 weeks.</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2"><strong>Tech Stack:</strong> Python, LangChain, OpenAI API, Scikit-learn</p>
+        <a href="https://github.com/swagatasur/GenAI_Anomaly_Classification" class="text-blue-600 hover:underline">View on GitHub →</a>
+      </div>
+
+      <div class="p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/600x300?text=AML+Calibration" alt="AML Calibration" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold mb-2">💸 AML Threshold Calibration</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">Performed AML threshold calibration across multiple entities to balance false positives and missed alerts. Delivered optimized detection thresholds improving model reliability and operational efficiency.</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2"><strong>Tech Stack:</strong> SAS, Python, SQL, Statistical Analysis</p>
+        <a href="https://github.com/swagatasur/AML_Threshold_Calibration" class="text-blue-600 hover:underline">View on GitHub →</a>
+      </div>
+
+      <div class="p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/600x300?text=Sanction+Monitoring" alt="Sanction Monitoring" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold mb-2">🛡️ Sanction Embargo Monitoring Pipeline</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">Built an end-to-end sanctions monitoring pipeline using Kedro, CI/CD, and Oozie scheduling. Designed Kibana dashboards for compliance KPI tracking and implemented Extra Trees Classifier retraining for false positive reduction.</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2"><strong>Tech Stack:</strong> Python, Kedro, Oozie, Kibana, Extra Trees</p>
+        <a href="https://github.com/swagatasur/Sanction_Embargo_Monitoring" class="text-blue-600 hover:underline">View on GitHub →</a>
+      </div>
+
+      <div class="p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/600x300?text=Credit+Risk+Model" alt="Credit Risk Model" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold mb-2">📊 Credit Risk Scoring Model</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">Developed credit default prediction models using Logistic Regression and Random Forest (AUC 0.92). Implemented feature selection, cross-validation, and SHAP-based interpretability for explainability.</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2"><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, SHAP</p>
+        <a href="https://github.com/swagatasur/Credit_Risk_Model" class="text-blue-600 hover:underline">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 px-6 text-center bg-gray-50 dark:bg-gray-900">
+    <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300">Interested in collaborating or discussing opportunities? Reach out at <a href="mailto:your.email@gmail.com" class="text-blue-500 hover:underline">your.email@gmail.com</a>.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-6 mt-12 dark:bg-gray-950">
+    <div class="container mx-auto text-center">
+      <p>© 2025 Swagata Sur. Built with ❤️ using Tailwind CSS and GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
