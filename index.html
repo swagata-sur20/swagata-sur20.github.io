@@ -1,23 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Swagata Sur — Data Scientist</title>
-  <meta name="description" content="Swagata Sur — Associate Data Scientist. AML, anomaly detection, LLMs, ML, statistics." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swagata Sur | Data Scientist</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body class="theme-dark">
-  <header class="site-header">
-    <nav class="nav">
-      <div class="brand">
-        <span class="brand-name">Swagata Sur</span>
-        <span class="brand-role">Associate Data Scientist</span>
-      </div>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Swagata Sur</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -29,162 +22,79 @@
     </nav>
   </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <h1 class="name">Swagata Sur</h1>
-          <p class="tagline">Associate Data Scientist — AML, Anomaly Detection, Generative AI & Model Monitoring</p>
-
-          <div class="cta">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn ghost" href="/Swagata-Data_Scientist_Resume.pdf" download>Download Resume</a>
-          </div>
-
-          <ul class="contact-inline">
-            <li><strong>Email</strong>: <a href="mailto:swagata.stats@gmail.com">swagata.stats@gmail.com</a></li>
-            <li><strong>Phone</strong>: <a href="tel:+917980900823">+91 79809 00823</a></li>
-            <li><strong>LinkedIn</strong>: <a href="https://linkedin.com/in/placeholder" target="_blank" rel="noopener">linkedin.com/in/placeholder</a></li>
-            <li><strong>GitHub</strong>: <a href="https://github.com/placeholder" target="_blank" rel="noopener">github.com/placeholder</a></li>
-          </ul>
-        </div>
-
-        <div class="hero-photo">
-          <!-- image file uploaded to repo root as Swagata-sur.jpg -->
-          <img src="Swagata-sur.jpg" alt="Swagata Sur — Profile photo">
-        </div>
+  <section id="hero">
+    <img src="Swagata-sur.jpg" alt="Swagata Sur" class="profile-pic">
+    <div class="hero-text">
+      <h1>Swagata Sur</h1>
+      <h3>Associate Data Scientist</h3>
+      <p>AML · Anomaly Detection · Generative AI · Machine Learning</p>
+      <div class="hero-links">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="mailto:swagata.stats@gmail.com" class="btn-outline">Contact</a>
       </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          Associate Data Scientist with 2.5+ years experience at Société Générale working on AML scenario threshold calibration,
-          model monitoring, machine learning, anomaly classification and Generative AI. Comfortable across Python, PySpark, R, SAS, SQL and modern
-          ML tooling — building production pipelines, dashboards and model retraining workflows.
-        </p>
-      </div>
-    </section>
-
-    <section id="experience" class="section experience">
-      <div class="container">
-        <h2>Experience</h2>
-
-        <article class="job">
-          <h3>Société Générale — Associate Data Scientist</h3>
-          <p class="meta">Jul 2023 – Present</p>
-
-          <ul>
-            <li><strong>Sanction Embargo Monitoring Pipeline</strong> — Built an end-to-end data monitoring pipeline for sanctions compliance alerts; monitored 6+ KPIs for data drift and system health. Implemented Kibana dashboards for real-time visibility and integrated a Kedro data project with CI/CD and Oozie scheduling.</li>
-
-            <li><strong>Generative AI PoC — Automated Anomaly Classification</strong> — Created an AI-driven rule-based classifier to map anomalies to risk domains using text embeddings, clustering, and LLM prompting. Produced business-unit synthesis documents and reduced manual analyst effort by 2–3 weeks per cycle.</li>
-
-            <li><strong>Anomaly Detection & Threshold Optimization (AML Calibration)</strong> — Performed statistical calibration for transaction monitoring thresholds, applying distribution analysis and quantile methods. Reduced alert volume by 25% across 16 entities and calibrated 30+ AML scenarios with zero escalations.</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2>Selected Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h4>Sanctions Monitoring Pipeline</h4>
-            <p>End-to-end pipeline with drift detection, KPI monitoring and dashboarding. Tech: Python, Kedro, Kibana, Oozie, SQL.</p>
-            <p class="pill">Production ML & Monitoring</p>
-          </div>
-
-          <div class="project-card">
-            <h4>Generative AI — Anomaly Classification PoC</h4>
-            <p>Used embeddings + clustering + LLM prompting to auto-classify anomalies and create domain-level summaries. Delivered analyst time savings & improved routing accuracy.</p>
-            <p class="pill">NLP · LLMs · Embeddings</p>
-          </div>
-
-          <div class="project-card">
-            <h4>AML Threshold Optimization</h4>
-            <p>Statistical calibration of transaction monitoring thresholds across multiple entity types, combined with stakeholder validation and sensitivity analysis.</p>
-            <p class="pill">Statistics · Calibration</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-list">
-          <div class="skill-group">
-            <h5>Programming & Tools</h5>
-            <p>Python · PySpark · R · SAS · SQL · Git · Jupyter · Power BI · Excel</p>
-          </div>
-
-          <div class="skill-group">
-            <h5>ML & AI</h5>
-            <p>Regression · Classification · Clustering · Anomaly Detection · PCA · LLM APIs · Embeddings · Prompt Engineering · LangChain</p>
-          </div>
-
-          <div class="skill-group">
-            <h5>Domain</h5>
-            <p>AML · KYC · Compliance · Regulatory Monitoring</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="section education">
-      <div class="container">
-        <h2>Education</h2>
-        <ul class="education-list">
-          <li><strong>M.Sc. Statistics</strong>, Ramjas College, University of Delhi — 2023 — 9.00 CGPA</li>
-          <li><strong>B.Sc. (Hons) Statistics</strong>, Bethune College, University of Calcutta — 2021 — 7.53 CGPA</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="awards" class="section awards">
-      <div class="container">
-        <h2>Awards</h2>
-        <ul>
-          <li><strong>Winner — Mathwizzathon 2025</strong> (Societe Generale international hackathon)</li>
-          <li><strong>Top 5 team — Mathwizzathon 2024</strong> (Societe Generale)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>If you'd like to collaborate or see more projects, feel free to reach out:</p>
-        <ul class="contact-block">
-          <li><strong>Email:</strong> <a href="mailto:swagata.stats@gmail.com">swagata.stats@gmail.com</a></li>
-          <li><strong>Phone:</strong> <a href="tel:+917980900823">+91 79809 00823</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/placeholder" target="_blank" rel="noopener">linkedin.com/in/placeholder</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/placeholder" target="_blank" rel="noopener">github.com/placeholder</a></li>
-        </ul>
-
-        <form id="contactForm" class="contact-form" action="mailto:swagata.stats@gmail.com" method="post" enctype="text/plain">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Hi Swagata —"></textarea>
-
-          <button class="btn" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Swagata Sur · Built with care.</p>
     </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>
+      Associate Data Scientist with 2.5+ years of experience at Société Générale. Skilled in AML scenario calibration, anomaly detection, model monitoring, and Generative AI. Experienced with Python, PySpark, R, SAS, SQL, and data pipeline automation.
+    </p>
+  </section>
+
+  <section id="experience" class="container">
+    <h2>Experience</h2>
+    <h3>Société Générale — Associate Data Scientist (Jul 2023 – Present)</h3>
+    <ul>
+      <li>Developed AML threshold calibration models and anomaly detection systems reducing alerts by 25%.</li>
+      <li>Created a Generative AI-based rule mapping system using LLM embeddings for anomaly classification.</li>
+      <li>Built end-to-end data pipelines with Kedro, Oozie, and Kibana dashboards for monitoring.</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Highlighted Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h4>Sanctions Monitoring Pipeline</h4>
+        <p>Built a real-time data pipeline with drift detection and KPI dashboards.</p>
+      </div>
+      <div class="card">
+        <h4>Generative AI Anomaly Classifier</h4>
+        <p>Used embeddings and LLMs to classify anomalies across risk domains.</p>
+      </div>
+      <div class="card">
+        <h4>AML Threshold Optimization</h4>
+        <p>Calibrated transaction monitoring thresholds using quantile analysis and sensitivity trade-offs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="container">
+    <h2>Technical Skills</h2>
+    <p><strong>Programming:</strong> Python, PySpark, R, SAS, SQL</p>
+    <p><strong>ML/AI:</strong> Regression, Classification, Clustering, Anomaly Detection, PCA, LLM APIs</p>
+    <p><strong>Tools:</strong> Power BI, Git, Jupyter, Excel</p>
+    <p><strong>Domain:</strong> AML, KYC, Compliance, Regulatory Monitoring</p>
+  </section>
+
+  <section id="education" class="container">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>M.Sc. Statistics</strong> — Ramjas College, University of Delhi (2023) — 9.00 CGPA</li>
+      <li><strong>B.Sc. (Hons) Statistics</strong> — Bethune College, University of Calcutta (2021) — 7.53 CGPA</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:swagata.stats@gmail.com">swagata.stats@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/placeholder" target="_blank">linkedin.com/in/placeholder</a></p>
+    <p>GitHub: <a href="https://github.com/placeholder" target="_blank">github.com/placeholder</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Swagata Sur | Built with ❤️</p>
+  </footer>
 </body>
 </html>
