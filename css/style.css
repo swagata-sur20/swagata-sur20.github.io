@@ -44,7 +44,7 @@ header.topnav{
 .hero-left {
   flex: 1;
   text-align: left;
-  margin-left: -60px; /* move text slightly left */
+  margin-left: -40px; /* move text slightly left */
 }
 
 .hero-right {
