@@ -34,27 +34,25 @@ header.topnav{
 /* .hero-content{max-width:1100px;margin:0 auto;display:flex;gap:36px;align-items:center;flex-wrap:wrap} */
 /* .hero-left{flex:1} */
 .hero-content {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 120px; /* wider space between text & image */
-  padding: 0 60px;
-  position: relative;
+  justify-content: space-between; /* pushes left & right apart */
+  padding: 0 100px; /* adds side breathing room */
 }
 
 .hero-left {
-  flex: 0 0 45%; /* fixed width to text side */
+  flex: 1;
   text-align: left;
-  margin-left: -60px; /* nudge text further left */
+  margin-left: 40px; /* shift text a little left */
 }
 
 .hero-right {
-  flex: 0 0 45%;
+  flex: 1;
   display: flex;
-  justify-content: flex-end;
-  transform: translateX(60px); /* pushes image right */
+  justify-content: flex-end; /* ensures image hugs the right */
+  padding-right: 80px; /* control how far right it goes */
 }
 
 .hero-right img {
@@ -62,7 +60,8 @@ header.topnav{
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
 /* .hero-right{width:280px;display:flex;align-items:center;justify-content:center} */
