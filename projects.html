@@ -137,10 +137,10 @@
         <br>- Individuals:Employed a rule-based approach combined with text similarity metrics (specifically Jaro distance) 
         to assess the resemblance between client names and names on sanction lists. The model calculates edit distances 
         and applies thresholds to determine if an alert is a potential match.
-        - Corporates: Developed a machine learning model using the Extra Trees classifier. Employed oversampling for "True" labeled
+        <br>- Corporates: Developed a machine learning model using the Extra Trees classifier. Employed oversampling for "True" labeled
         alerts to address class imbalance. Conducted hyperparameter tuning(grid search over number of estimators, max depth etc)
         to optimize model precision and finalized the best performing model.
-        - Model Monitoring: Implemented automated routines to monitor missing values in critical alert fields like alert IDs,
+        <br>- Model Monitoring: Implemented automated routines to monitor missing values in critical alert fields like alert IDs,
         date of birth of the party, daily alert volume, and data consistency. USed statistical methods like interquartile range,z score
         to set upper threshold and flag unexpected spikes or drops in alert volumes.
       </p>
@@ -149,11 +149,11 @@
     <div class="project-section">
       <h4>Solution</h4>
       <p>
-        - The solution was an integrated alert screening system that automatically evaluates daily transaction alerts using both rule-based and machine learning methodologies. 
+        <br>- The solution was an integrated alert screening system that automatically evaluates daily transaction alerts using both rule-based and machine learning methodologies. 
         The monitoring framework provided robust, automated oversight of the QATP alert screening system. By proactively 
         identifying data quality issues, operational anomalies, and inconsistencies, this framework ensured the model's 
         outputs remained reliable and compliant with regulatory standards without regular manual review.
-        - •	Developed an end-to-end data monitoring pipeline for sanctions compliance alerts, analyzing 6+ KPIs to detect data drift and maintain high model reliability
+        <br>- Developed an end-to-end data monitoring pipeline for sanctions compliance alerts, analyzing 6+ KPIs to detect data drift and maintain high model reliability
       </p>
     </div>
   </div>
@@ -184,7 +184,7 @@
       <h4>Approach</h4>
       <p>
         Developed an AI-driven rule-based classification system to automate the mapping of anomalies to their respective 
-        risk domains, replacing manual mapping. •	Leveraged text embeddings, clustering techniques, and LLM-based prompting 
+        risk domains, replacing manual mapping. Leveraged text embeddings, clustering techniques, and LLM-based prompting 
         to extract insights and create domain-level summaries.
       </p>
     </div>
