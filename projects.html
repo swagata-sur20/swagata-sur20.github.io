@@ -4,99 +4,75 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects | Swagata Sur</title>
+
+  <!-- Main Site CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    /* Extend the same color palette */
-    .projects-container {
-      max-width: 1100px;
+    .projects-page {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 120px 22px 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 26px;
+      padding: 120px 22px 80px;
     }
 
-    .project-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: 14px;
-      padding: 24px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+    .project-block {
+      margin-bottom: 80px;
     }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(79, 70, 229, 0.6); /* violet accent */
-      box-shadow: 0 6px 28px rgba(79,70,229,0.2);
-    }
-
-    .project-header h4 {
-      margin: 0 0 8px;
-      font-size: 1.2rem;
-      color: var(--text);
+    .project-title {
+      font-size: 1.8rem;
       font-weight: 600;
-    }
-
-    .tech-stack {
-      font-size: 0.9rem;
-      color: var(--muted);
       margin-bottom: 10px;
+      color: #ffffff;
     }
 
-    .project-description {
-      font-size: 0.95rem;
+    .project-oneliner {
+      font-size: 1.05rem;
       color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .project-meta {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-section {
       margin-bottom: 18px;
     }
 
-    .project-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.9rem;
+    .project-section h4 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: #ffffff;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.25s ease;
     }
 
-    .btn.primary {
-      background: linear-gradient(90deg,#4f46e5,#06b6d4);
-      color: #fff;
+    .project-section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
 
-    .btn.primary:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-
-    .btn.secondary {
-      border: 1px solid #06b6d4;
-      color: #06b6d4;
-    }
-
-    .btn.secondary:hover {
-      background: #06b6d4;
-      color: #fff;
-      transform: translateY(-2px);
+    .project-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      margin: 60px 0;
     }
 
     h2.section {
       text-align: center;
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: 600;
       background: var(--accent);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-top: 100px;
+      margin-bottom: 80px;
     }
 
     footer {
@@ -111,77 +87,141 @@
 
 <body>
 
-  <!-- Top Nav -->
-  <header class="topnav">
-    <div class="nav-container">
-      <div class="nav-logo">Swagata Sur</div>
-      <nav class="nav-links">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="projects.html"><i class="fas fa-diagram-project"></i> Projects</a>
-        <a href="academics.html"><i class="fas fa-graduation-cap"></i> Academics</a>
-        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-      </nav>
+<!-- Top Nav -->
+<header class="topnav">
+  <div class="nav-container">
+    <div class="nav-logo">Swagata Sur</div>
+    <nav class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="projects.html"><i class="fas fa-diagram-project"></i> Projects</a>
+      <a href="academics.html"><i class="fas fa-graduation-cap"></i> Academics</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Projects Page -->
+<section class="projects-page">
+  <h2 class="section">Featured Projects</h2>
+
+  <!-- Project 1 -->
+  <div class="project-block">
+    <h3 class="project-title">Sanction & Embargo Monitoring Pipeline</h3>
+    <p class="project-oneliner">
+      An end-to-end AML monitoring pipeline designed to detect data drift, reduce false positives,
+      and improve sanctions alert reliability.
+    </p>
+
+    <div class="project-meta">
+      <b>Organizer:</b> Société Générale — Global Solution Center, India
     </div>
-  </header>
 
-  <!-- Projects -->
-  <section class="container">
-    <h2 class="section">Featured Projects</h2>
-    <div class="projects-container">
-
-      <!-- Project 1 -->
-      <div class="project-card">
-        <div class="project-header">
-          <h4><i class="fas fa-brain"></i> LLM-Powered Resume Screener</h4>
-          <p class="tech-stack">Python • OpenAI API • Streamlit</p>
-        </div>
-        <p class="project-description">An AI-powered app that evaluates resumes against job descriptions using LLM embeddings and GPT-based semantic scoring.</p>
-        <div class="project-buttons">
-          <a href="#" class="btn primary"><i class="fab fa-github"></i> Code</a>
-          <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div class="project-header">
-          <h4><i class="fas fa-chart-line"></i> Sales Forecast Dashboard</h4>
-          <p class="tech-stack">Python • Prophet • Tableau</p>
-        </div>
-        <p class="project-description">A time-series forecasting dashboard that visualizes multi-region sales trends and provides demand prediction using Prophet.</p>
-        <div class="project-buttons">
-          <a href="#" class="btn primary"><i class="fab fa-github"></i> Code</a>
-          <a href="#" class="btn secondary"><i class="fas fa-file-alt"></i> Report</a>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card">
-        <div class="project-header">
-          <h4><i class="fas fa-database"></i> Anomaly Detection in Transactions</h4>
-          <p class="tech-stack">Python • LSTM Autoencoder • Kedro</p>
-        </div>
-        <p class="project-description">Developed an AML-focused anomaly detection pipeline using autoencoders integrated into CI/CD workflows with Kedro.</p>
-        <div class="project-buttons">
-          <a href="#" class="btn primary"><i class="fab fa-github"></i> Code</a>
-          <a href="#" class="btn secondary"><i class="fas fa-file-alt"></i> Docs</a>
-        </div>
-      </div>
-
+    <div class="project-section">
+      <h4>Process</h4>
+      <p>
+        Built a scalable sanctions monitoring pipeline analyzing 6+ KPIs to track alert performance,
+        data drift, and system health across multiple AML scenarios.
+      </p>
     </div>
-  </section>
 
-  <footer>© 2025 Swagata Sur. Built with 💙 using HTML & CSS.</footer>
+    <div class="project-section">
+      <h4>Approach</h4>
+      <p>
+        Implemented an end-to-end Kedro project integrated with CI/CD and Oozie for automated scheduling.
+        Developed and retrained an Extra Trees Classifier covering data preparation, feature engineering,
+        model optimization, and production deployment.
+      </p>
+    </div>
 
-  <script>
-  // same reveal animation as main site
-  window.addEventListener('scroll',()=>{
-    document.querySelectorAll('.reveal').forEach(el=>{
-      const r=el.getBoundingClientRect();
-      if(r.top<window.innerHeight-80) el.classList.add('show');
-    });
-  });
-  </script>
+    <div class="project-section">
+      <h4>Solution</h4>
+      <p>
+        Delivered Kibana dashboards providing real-time visibility into alerts and model stability.
+        Significantly reduced false positives while maintaining regulatory compliance.
+      </p>
+    </div>
+  </div>
+
+  <div class="project-divider"></div>
+
+  <!-- Project 2 -->
+  <div class="project-block">
+    <h3 class="project-title">Generative AI PoC – Automated Anomaly Classification</h3>
+    <p class="project-oneliner">
+      A Generative AI–driven system to automate anomaly classification and domain-level risk summarization.
+    </p>
+
+    <div class="project-meta">
+      <b>Organizer:</b> Société Générale — Global Solution Center, India
+    </div>
+
+    <div class="project-section">
+      <h4>Process</h4>
+      <p>
+        Analyzed historical anomaly data across business units to understand classification patterns
+        and domain-level risk distributions.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h4>Approach</h4>
+      <p>
+        Built a rule-based classification system augmented with text embeddings, clustering techniques,
+        and LLM-based prompting to map anomalies to risk domains.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h4>Solution</h4>
+      <p>
+        Generated synthesis documents summarizing key anomaly clusters for each domain,
+        reducing manual analyst effort by 2–3 weeks per cycle through intelligent automation.
+      </p>
+    </div>
+  </div>
+
+  <div class="project-divider"></div>
+
+  <!-- Project 3 -->
+  <div class="project-block">
+    <h3 class="project-title">AML Threshold Optimization & Calibration</h3>
+    <p class="project-oneliner">
+      A statistical calibration initiative to optimize AML transaction monitoring thresholds at scale.
+    </p>
+
+    <div class="project-meta">
+      <b>Organizer:</b> Société Générale — Global Solution Center, India
+    </div>
+
+    <div class="project-section">
+      <h4>Process</h4>
+      <p>
+        Performed statistical analysis across multiple AML scenarios and entity types to assess
+        alert volumes, risk coverage, and threshold sensitivity.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h4>Approach</h4>
+      <p>
+        Applied distribution analysis, quantile-based methods, and sensitivity trade-off evaluation
+        in collaboration with business SMEs to validate calibration decisions.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h4>Solution</h4>
+      <p>
+        Reduced alert volume by 25% across 16 entities (GATS Non-US & NOMOS perimeter),
+        calibrated 30+ AML scenarios with zero escalations, and delivered dashboards
+        to 120+ stakeholders enabling a 0.3 FTE efficiency gain.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<footer>© 2026 Swagata Sur. Built with 💙 using HTML & CSS.</footer>
 
 </body>
 </html>
