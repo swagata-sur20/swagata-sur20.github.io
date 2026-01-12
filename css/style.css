@@ -96,55 +96,65 @@ footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid 
   .nav-links{gap:8px}
 }
 
-/* ===== FORCE COMPACT 2x2 FEATURE GRID ===== */
-
-#what-i-do .feature-wrapper {
-  max-width: 760px;     /* controls overall width */
-  margin: 0 auto;
-}
+/* ===== FEATURE GRID FULL-WIDTH ALIGNMENT ===== */
 
 #what-i-do .feature-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;  /* FORCE 2 columns */
-  gap: 18px;
-  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2x2 layout */
+  gap: 26px;
+  margin-top: 36px;
 }
 
+/* Stretch cards naturally */
 #what-i-do .feature-card {
+  width: 100%;
   background: rgba(255,255,255,0.025);
-  border-radius: 14px;
-  padding: 18px;
+  border-radius: 18px;
+  padding: 28px;
   border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
-  min-height: 210px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  transition: all 0.3s ease;
 }
 
-/* Smaller icons */
+#what-i-do .feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.6);
+}
+
+/* Icons */
 #what-i-do .feature-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(79,70,229,0.25), rgba(6,182,212,0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
 #what-i-do .feature-icon i {
-  font-size: 18px;
+  font-size: 22px;
+  color: #06b6d4;
 }
 
-/* Text size */
+/* Text */
 #what-i-do .feature-card h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 #what-i-do .feature-card p {
-  font-size: 0.88rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--muted);
 }
 
-/* Mobile fallback */
-@media (max-width: 720px) {
+/* Mobile */
+@media (max-width: 800px) {
   #what-i-do .feature-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 }
