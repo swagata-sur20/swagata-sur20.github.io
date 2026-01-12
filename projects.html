@@ -108,7 +108,7 @@
   <div class="project-block">
     <h3 class="project-title">Sanction & Embargo Monitoring Pipeline</h3>
     <p class="project-oneliner">
-      An end-to-end AML monitoring pipeline designed to detect data drift, reduce false positives,
+      An end-to-end monitoring pipeline designed to detect data drift, reduce false positives,
       and improve sanctions alert reliability.
     </p>
 
@@ -119,25 +119,41 @@
     <div class="project-section">
       <h4>Process</h4>
       <p>
-        Built a scalable sanctions monitoring pipeline analyzing 6+ KPIs to track alert performance,
-        data drift, and system health across multiple AML scenarios.
+        SG processes a large volume of transactions daily, which must be continuously monitored to comply with regulations 
+        regarding sanctioned individuals and entities. Analysts are required to review every transaction that are flagged(by Quality Assesment platform) as
+        potential match to a sanctioned person or entity - a labour-intensive and time consuming process. To streamline this workflow 
+        and improve operational efficiency, SG wanted to develope a model to screen transaction alerts and forward only 
+        those with a high likelihood of being true matches to the analysts for further review. SG also wanted to ensure 
+        the ongoing reliability, accuracy of the system by continously tracking data quality, operational performance.
+  
       </p>
     </div>
 
     <div class="project-section">
       <h4>Approach</h4>
       <p>
-        Implemented an end-to-end Kedro project integrated with CI/CD and Oozie for automated scheduling.
-        Developed and retrained an Extra Trees Classifier covering data preparation, feature engineering,
-        model optimization, and production deployment.
+        Adapted and trained models for two distinct client types: Individuals(sanctioned persons) and 
+        Corporates(sanctioned entities).
+        - Individuals:Employed a rule-based approach combined with text similarity metrics (specifically Jaro distance) 
+        to assess the resemblance between client names and names on sanction lists. The model calculates edit distances 
+        and applies thresholds to determine if an alert is a potential match.
+        - Corporates: Developed a machine learning model using the Extra Trees classifier. Employed oversampling for "True" labeled
+        alerts to address class imbalance. Conducted hyperparameter tuning(grid search over number of estimators, max depth etc)
+        to optimize model precision and finalized the best performing model.
+        - Model Monitoring: Implemented automated routines to monitor missing values in critical alert fields like alert IDs,
+        date of birth of the party, daily alert volume, and data consistency. USed statistical methods like interquartile range,z score
+        to set upper threshold and flag unexpected spikes or drops in alert volumes.
       </p>
     </div>
 
     <div class="project-section">
       <h4>Solution</h4>
       <p>
-        Delivered Kibana dashboards providing real-time visibility into alerts and model stability.
-        Significantly reduced false positives while maintaining regulatory compliance.
+        - The solution was an integrated alert screening system that automatically evaluates daily transaction alerts using both rule-based and machine learning methodologies. 
+        The monitoring framework provided robust, automated oversight of the QATP alert screening system. By proactively 
+        identifying data quality issues, operational anomalies, and inconsistencies, this framework ensured the model's 
+        outputs remained reliable and compliant with regulatory standards without regular manual review.
+        - •	Developed an end-to-end data monitoring pipeline for sanctions compliance alerts, analyzing 6+ KPIs to detect data drift and maintain high model reliability
       </p>
     </div>
   </div>
@@ -158,16 +174,18 @@
     <div class="project-section">
       <h4>Process</h4>
       <p>
-        Analyzed historical anomaly data across business units to understand classification patterns
-        and domain-level risk distributions.
+        Compliance oversighters play a crucial role in monitoring and reporting non-financial risks. Over 8k anomalies are 
+        declared per year in different languages which analysts had to manually categorize. Aim of this project was to implement
+        an AI solution for automating the categorization of these anomalies.
       </p>
     </div>
 
     <div class="project-section">
       <h4>Approach</h4>
       <p>
-        Built a rule-based classification system augmented with text embeddings, clustering techniques,
-        and LLM-based prompting to map anomalies to risk domains.
+        Developed an AI-driven rule-based classification system to automate the mapping of anomalies to their respective 
+        risk domains, replacing manual mapping. •	Leveraged text embeddings, clustering techniques, and LLM-based prompting 
+        to extract insights and create domain-level summaries.
       </p>
     </div>
 
@@ -197,7 +215,7 @@
       <h4>Process</h4>
       <p>
         Performed statistical analysis across multiple AML scenarios and entity types to assess
-        alert volumes, risk coverage, and threshold sensitivity.
+        alert volumes, risk coverage, and threshold sensitivity to reduce false positive alert volume.
       </p>
     </div>
 
@@ -212,9 +230,8 @@
     <div class="project-section">
       <h4>Solution</h4>
       <p>
-        Reduced alert volume by 25% across 16 entities (GATS Non-US & NOMOS perimeter),
-        calibrated 30+ AML scenarios with zero escalations, and delivered dashboards
-        to 120+ stakeholders enabling a 0.3 FTE efficiency gain.
+        Reduced alert volume by 25% across 16 entities, calibrated 30+ AML scenarios with zero escalations, and delivered dashboards
+        to 120+ stakeholders enabling a 0.5 FTE efficiency gain.
       </p>
     </div>
   </div>
