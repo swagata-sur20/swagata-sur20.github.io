@@ -96,67 +96,55 @@ footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid 
   .nav-links{gap:8px}
 }
 
-/* Compact 2x2 Feature Grid */
+/* ===== FORCE COMPACT 2x2 FEATURE GRID ===== */
 
-.feature-wrapper {
-  max-width: 820px;     /* keeps grid compact */
+#what-i-do .feature-wrapper {
+  max-width: 760px;     /* controls overall width */
   margin: 0 auto;
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);   /* force 2 columns */
-  gap: 20px;
+#what-i-do .feature-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;  /* FORCE 2 columns */
+  gap: 18px;
   margin-top: 32px;
 }
 
-.feature-card {
+#what-i-do .feature-card {
   background: rgba(255,255,255,0.025);
   border-radius: 14px;
-  padding: 20px;
+  padding: 18px;
   border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
-  transition: all 0.25s ease;
-  min-height: 220px;   /* keeps cards uniform */
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+  min-height: 210px;
 }
 
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+/* Smaller icons */
+#what-i-do .feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.feature-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(79,70,229,0.25), rgba(6,182,212,0.25));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.feature-icon i {
+#what-i-do .feature-icon i {
   font-size: 18px;
-  color: #06b6d4;
 }
 
-.feature-card h3 {
+/* Text size */
+#what-i-do .feature-card h3 {
   font-size: 1rem;
   margin-bottom: 6px;
-  color: #ffffff;
-  font-weight: 600;
 }
 
-.feature-card p {
+#what-i-do .feature-card p {
   font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--muted);
+  line-height: 1.5;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .feature-grid {
-    grid-template-columns: 1fr;
+/* Mobile fallback */
+@media (max-width: 720px) {
+  #what-i-do .feature-grid {
+    grid-template-columns: 1fr !important;
   }
 }
