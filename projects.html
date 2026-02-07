@@ -5,84 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects | Swagata Sur</title>
 
-  <!-- Main Site CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-  <style>
-    .projects-page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 120px 22px 80px;
-    }
-
-    .project-block {
-      margin-bottom: 80px;
-    }
-
-    .project-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .project-oneliner {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 26px;
-    }
-
-    .project-meta {
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .project-section {
-      margin-bottom: 18px;
-    }
-
-    .project-section h4 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .project-section p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .project-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-      margin: 60px 0;
-    }
-
-    h2.section {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 600;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 80px;
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 40px 0;
-      border-top: 1px solid rgba(255,255,255,0.03);
-      font-size: 0.9rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -98,16 +25,46 @@
   </div>
 </header>
 
-<!-- Projects Page -->
-<section class="projects-page">
+<section class="projects-page" id="top">
+
   <h2 class="section">Featured Projects</h2>
 
-  <!-- Project 1 -->
-  <div class="project-block">
+  <!-- ================= SUMMARY GRID ================= -->
+  <div class="project-grid">
+
+    <a href="#sanctions" class="project-card">
+      <h3>Sanctions Monitoring</h3>
+      <p>Alert screening & drift monitoring</p>
+      <span>↓ 25% false positives</span>
+    </a>
+
+    <a href="#genai" class="project-card">
+      <h3>Generative AI PoC</h3>
+      <p>Automated anomaly classification</p>
+      <span>2–3 weeks saved</span>
+    </a>
+
+    <a href="#aml" class="project-card">
+      <h3>AML Calibration</h3>
+      <p>Threshold optimization at scale</p>
+      <span>30+ scenarios tuned</span>
+    </a>
+
+  </div>
+
+  <!-- ================= STICKY NAV ================= -->
+  <nav class="project-nav">
+    <a href="#sanctions">Sanctions</a>
+    <a href="#genai">GenAI PoC</a>
+    <a href="#aml">AML</a>
+  </nav>
+
+  <!-- ================= PROJECT 1 ================= -->
+  <div class="project-block" id="sanctions">
+
     <h3 class="project-title">Sanction & Embargo Monitoring Pipeline</h3>
     <p class="project-oneliner">
-      An end-to-end monitoring pipeline designed to detect data drift, reduce false positives,
-      and improve sanctions alert reliability.
+      End-to-end alert screening system to reduce false positives and ensure sanctions reliability.
     </p>
 
     <div class="project-meta">
@@ -115,54 +72,39 @@
     </div>
 
     <div class="project-section">
-      <h4>Process</h4>
+      <h4>Problem</h4>
       <p>
-        SG processes a large volume of transactions daily, which must be continuously monitored to comply with regulations 
-        regarding sanctioned individuals and entities. Analysts are required to review every transaction that are flagged(by Quality Assesment platform) as
-        potential match to a sanctioned person or entity - a labour-intensive and time consuming process. To streamline this workflow 
-        and improve operational efficiency, SG wanted to develope a model to screen transaction alerts and forward only 
-        those with a high likelihood of being true matches to the analysts for further review. SG also wanted to ensure 
-        the ongoing reliability, accuracy of the system by continously tracking data quality, operational performance.
-  
-      </p>
-    </div>
-
-    <div class="project-section">
-      <h4>Approach</h4>
-      <p>
-        Adapted and trained models for two distinct client types: Individuals(sanctioned persons) and 
-        Corporates(sanctioned entities).
-        <br>- Individuals:Employed a rule-based approach combined with text similarity metrics (specifically Jaro distance) 
-        to assess the resemblance between client names and names on sanction lists. The model calculates edit distances 
-        and applies thresholds to determine if an alert is a potential match.
-        <br>- Corporates: Developed a machine learning model using the Extra Trees classifier. Employed oversampling for "True" labeled
-        alerts to address class imbalance. Conducted hyperparameter tuning(grid search over number of estimators, max depth etc)
-        to optimize model precision and finalized the best performing model.
-        <br>- Model Monitoring: Implemented automated routines to monitor missing values in critical alert fields like alert IDs,
-        date of birth of the party, daily alert volume, and data consistency. USed statistical methods like interquartile range,z score
-        to set upper threshold and flag unexpected spikes or drops in alert volumes.
+        High volumes of sanctions alerts required full manual analyst review,
+        creating operational overload and inconsistent alert quality.
       </p>
     </div>
 
     <div class="project-section">
       <h4>Solution</h4>
       <p>
-        <br>- The solution was an integrated alert screening system that automatically evaluates daily transaction alerts using both rule-based and machine learning methodologies. 
-        The monitoring framework provided robust, automated oversight of the QATP alert screening system. By proactively 
-        identifying data quality issues, operational anomalies, and inconsistencies, this framework ensured the model's 
-        outputs remained reliable and compliant with regulatory standards without regular manual review.
-        <br>- Developed an end-to-end data monitoring pipeline for sanctions compliance alerts, analyzing 6+ KPIs to detect data drift and maintain high model reliability
+        Dual-path screening system combining rule-based matching for individuals,
+        ML-based classification for corporates, and automated data quality & drift monitoring.
       </p>
     </div>
+
+    <div class="project-section">
+      <h4>Impact</h4>
+      <p>
+        ↓ 25% false positives • ↑ analyst efficiency • 6+ KPIs continuously monitored
+      </p>
+    </div>
+
+    <a href="#top" class="back-to-top">↑ Back to top</a>
   </div>
 
   <div class="project-divider"></div>
 
-  <!-- Project 2 -->
-  <div class="project-block">
+  <!-- ================= PROJECT 2 ================= -->
+  <div class="project-block" id="genai">
+
     <h3 class="project-title">Generative AI PoC – Automated Anomaly Classification</h3>
     <p class="project-oneliner">
-      A Generative AI–driven system to automate anomaly classification and domain-level risk summarization.
+      AI-driven system for automated anomaly categorization and risk summarization.
     </p>
 
     <div class="project-meta">
@@ -170,39 +112,39 @@
     </div>
 
     <div class="project-section">
-      <h4>Process</h4>
+      <h4>Problem</h4>
       <p>
-        Compliance oversighters play a crucial role in monitoring and reporting non-financial risks. Over 8k anomalies are 
-        declared per year in different languages which analysts had to manually categorize. Aim of this project was to implement
-        an AI solution for automating the categorization of these anomalies.
-      </p>
-    </div>
-
-    <div class="project-section">
-      <h4>Approach</h4>
-      <p>
-        Developed an AI-driven rule-based classification system to automate the mapping of anomalies to their respective 
-        risk domains, replacing manual mapping. Leveraged text embeddings, clustering techniques, and LLM-based prompting 
-        to extract insights and create domain-level summaries.
+        Analysts manually categorized 8k+ multilingual anomalies annually,
+        consuming weeks of repetitive effort.
       </p>
     </div>
 
     <div class="project-section">
       <h4>Solution</h4>
       <p>
-        Generated synthesis documents summarizing key anomaly clusters for each domain,
-        reducing manual analyst effort by 2–3 weeks per cycle through intelligent automation.
+        Rule-driven AI system using embeddings, clustering, and LLM prompting
+        to automate classification and generate synthesis documents.
       </p>
     </div>
+
+    <div class="project-section">
+      <h4>Impact</h4>
+      <p>
+        2–3 weeks analyst effort saved per reporting cycle.
+      </p>
+    </div>
+
+    <a href="#top" class="back-to-top">↑ Back to top</a>
   </div>
 
   <div class="project-divider"></div>
 
-  <!-- Project 3 -->
-  <div class="project-block">
+  <!-- ================= PROJECT 3 ================= -->
+  <div class="project-block" id="aml">
+
     <h3 class="project-title">AML Threshold Optimization & Calibration</h3>
     <p class="project-oneliner">
-      A statistical calibration initiative to optimize AML transaction monitoring thresholds at scale.
+      Statistical calibration initiative to optimize AML monitoring thresholds.
     </p>
 
     <div class="project-meta">
@@ -210,28 +152,21 @@
     </div>
 
     <div class="project-section">
-      <h4>Process</h4>
-      <p>
-        Performed statistical analysis across multiple AML scenarios and entity types to assess
-        alert volumes, risk coverage, and threshold sensitivity to reduce false positive alert volume.
-      </p>
-    </div>
-
-    <div class="project-section">
       <h4>Approach</h4>
       <p>
-        Applied distribution analysis, quantile-based methods, and sensitivity trade-off evaluation
-        in collaboration with business SMEs to validate calibration decisions.
+        Distribution analysis, quantile-based calibration, and sensitivity trade-off evaluation
+        with business SMEs.
       </p>
     </div>
 
     <div class="project-section">
-      <h4>Solution</h4>
+      <h4>Impact</h4>
       <p>
-        Reduced alert volume by 25% across 16 entities, calibrated 30+ AML scenarios with zero escalations, and delivered dashboards
-        to 120+ stakeholders enabling a 0.5 FTE efficiency gain.
+        ↓ 25% alert volume • 30+ scenarios calibrated • 0.5 FTE efficiency gain
       </p>
     </div>
+
+    <a href="#top" class="back-to-top">↑ Back to top</a>
   </div>
 
 </section>
