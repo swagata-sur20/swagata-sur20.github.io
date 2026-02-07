@@ -33,39 +33,39 @@
   <!-- ================= SUMMARY GRID ================= -->
   <div class="project-grid">
 
-    <a href="#sanctions" class="project-card">
+    <a href="#Monitoring Pipeline" class="project-card">
       <h3>Sanctions Monitoring</h3>
       <p>Alert screening & drift monitoring</p>
       <span>↓ 25% false positives</span>
     </a>
 
     <a href="#genai" class="project-card">
-      <h3>Generative AI PoC</h3>
-      <p>Automated anomaly classification</p>
-      <span>2–3 weeks saved</span>
+      <h3>Gen AI </h3>
+      <p>Automated anomaly classification and synthesis document summarization</p>
+      <span>2900 hours saved annuallyd</span>
     </a>
 
-    <a href="#aml" class="project-card">
-      <h3>AML Calibration</h3>
-      <p>Threshold optimization at scale</p>
-      <span>30+ scenarios tuned</span>
+    <a href="#Calibration" class="project-card">
+      <h3>Threshold Calibration</h3>
+      <p>Threshold optimization at scale using Statistics</p>
+      <span>↓ 1.5 FTE reduction</span>
     </a>
 
   </div>
 
   <!-- ================= STICKY NAV ================= -->
   <nav class="project-nav">
-    <a href="#sanctions">Sanctions</a>
-    <a href="#genai">GenAI PoC</a>
-    <a href="#aml">AML</a>
+    <a href="#Monitoring Pipeline">Monitoring Pipeline</a>
+    <a href="#genai">GenAI</a>
+    <a href="#Calibration">Calibration</a>
   </nav>
 
   <!-- ================= PROJECT 1 ================= -->
-  <div class="project-block" id="sanctions">
+  <div class="project-block" id="Monitoring Pipeline">
 
     <h3 class="project-title">Sanction & Embargo Monitoring Pipeline</h3>
     <p class="project-oneliner">
-      End-to-end alert screening system to reduce false positives and ensure sanctions reliability.
+      An end-to-end monitoring pipeline designed to detect data drift, reduce false positives, and improve sanctions alert reliability.
     </p>
 
     <div class="project-meta">
@@ -75,23 +75,34 @@
     <div class="project-section">
       <h4>Problem</h4>
       <p>
-        High volumes of sanctions alerts required full manual analyst review,
-        creating operational overload and inconsistent alert quality.
+        Financial institutions process large volumes of transactions that must be screened against global sanctions and embargo lists. 
+        Traditional screening systems generate a high number of false positives, 
+        forcing analysts to manually review alerts and increasing operational overhead while still posing compliance risk.
+        SG wanted to develop a model to screen transaction alerts after analysts' reviews to guardrail any human error that causes hefty fines.
+        SG also wanted to ensure the ongoing reliability, accuracy of the system by continously tracking data quality, operational performance
       </p>
     </div>
 
     <div class="project-section">
-      <h4>Solution</h4>
+      <h4>Approach</h4>
       <p>
-        Dual-path screening system combining rule-based matching for individuals,
-        ML-based classification for corporates, and automated data quality & drift monitoring.
+        1. Adapted and retrained a ML model for two client types: Individuals and Corporate.
+        <br>- Individuals: Employed a rule-based approach combined with text similarity metrics (specifically Jaro distance) 
+        to assess the resemblance between client names and names on sanction lists. The model calculates edit distances 
+        and applies thresholds to determine if an alert is a potential match.
+        <br>- Corporates: Developed a machine learning model using the Extra Trees classifier. Employed oversampling for "True" labeled
+        alerts to address class imbalance. Conducted hyperparameter tuning(grid search over number of estimators, max depth etc)
+        to optimize model precision and finalized the best performing model.
+        2. Model Monitoring: Implemented a model monitoring framework tracking 6+ KPIs as drift indicators. The monitoring framework provided robust, automated oversight of the QATP alert screening system. By proactively 
+        identifying data quality issues, operational anomalies, and inconsistencies, this framework ensured the model's 
+        outputs remained reliable and compliant with regulatory standards without regular manual review.
       </p>
     </div>
 
     <div class="project-section">
       <h4>Impact</h4>
       <p>
-        ↓ 25% false positives • ↑ analyst efficiency • 6+ KPIs continuously monitored
+        ↓ 25% false positives • 6+ KPIs continuously monitored
       </p>
     </div>
 
@@ -103,9 +114,9 @@
   <!-- ================= PROJECT 2 ================= -->
   <div class="project-block" id="genai">
 
-    <h3 class="project-title">Generative AI PoC – Automated Anomaly Classification</h3>
+    <h3 class="project-title">Automated Anomaly Classification using GEN AI</h3>
     <p class="project-oneliner">
-      AI-driven system for automated anomaly categorization and risk summarization.
+      AI-driven system for automated anomaly categorization and domain level risk summarization.
     </p>
 
     <div class="project-meta">
@@ -115,7 +126,7 @@
     <div class="project-section">
       <h4>Problem</h4>
       <p>
-        Analysts manually categorized 8k+ multilingual anomalies annually,
+        Risk teams manually categorized 8k+ multilingual anomalies annually,
         consuming weeks of repetitive effort.
       </p>
     </div>
@@ -123,15 +134,18 @@
     <div class="project-section">
       <h4>Solution</h4>
       <p>
-        Rule-driven AI system using embeddings, clustering, and LLM prompting
-        to automate classification and generate synthesis documents.
+        - Designed a rule based classification pipeline augmented with semantic similarity and clustering techniques.
+        <br>- Used fin-mpnet-base embeddings to convert anomaly descriptions into dense vectors for semantic comparison.
+        <br>- Applied clustering to identify dominant anomaly patterns within each risk domain.
+        <br>- Leveraged GPT-4 to generate structured, domain-level synthesis documents summarizing key risks and trends
       </p>
     </div>
 
     <div class="project-section">
       <h4>Impact</h4>
       <p>
-        2–3 weeks analyst effort saved per reporting cycle.
+        - 1.45 FTE reduction in manual effort
+        <br>- ~2,900 analyst hours saved annually
       </p>
     </div>
 
@@ -141,11 +155,11 @@
   <div class="project-divider"></div>
 
   <!-- ================= PROJECT 3 ================= -->
-  <div class="project-block" id="aml">
+  <div class="project-block" id="Calibration">
 
     <h3 class="project-title">AML Threshold Optimization & Calibration</h3>
     <p class="project-oneliner">
-      Statistical calibration initiative to optimize AML monitoring thresholds.
+      Transaction monitoring systems rely on thresholds to balance risk coverage and alert volume. Poorly calibrated thresholds lead to excessive false positives, increasing analyst workload without improving risk detection.
     </p>
 
     <div class="project-meta">
@@ -155,15 +169,16 @@
     <div class="project-section">
       <h4>Approach</h4>
       <p>
-        Distribution analysis, quantile-based calibration, and sensitivity trade-off evaluation
-        with business SMEs.
+        I led a statistical threshold calibration initiative across multiple AML scenarios and legal entities to reduce false positives while maintaining regulatory risk coverage. 
+        Performed distribution analysis and quantile-based calibration across transaction scenarios. Conducted sensitivity trade-off evaluations to understand the impact of 
+        threshold changes on alert volume and coverage.
       </p>
     </div>
 
     <div class="project-section">
       <h4>Impact</h4>
       <p>
-        ↓ 25% alert volume • 30+ scenarios calibrated • 0.5 FTE efficiency gain
+        ↓ 25% alert volume across 16 entities • 30+ scenarios calibrated • 1.5 FTE efficiency gain
       </p>
     </div>
 
